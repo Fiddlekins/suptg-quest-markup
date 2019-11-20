@@ -1,0 +1,15 @@
+// ==UserScript==
+// @name          Suptg Quest Markup
+// @description   Userscript to assist abstraction of a suptg archived thread into a data format suitable for other purposes
+// @author        Fiddlekins
+// @version       ${version}
+// @namespace     https://github.com/Fiddlekins/suptg-quest-markup
+// @include       http://suptg.thisisnotatrueending.com/archive/*
+// @include       https://suptg.thisisnotatrueending.com/archive/*
+// @include       http://suptg.thisisnotatrueending.com/qstarchive/*
+// @include       https://suptg.thisisnotatrueending.com/qstarchive/*
+// @grant         none
+// @updateURL     https://github.com/Fiddlekins/suptg-quest-markup/raw/master/${outputDir}/${userScriptMetaName}
+// @downloadURL   https://github.com/Fiddlekins/suptg-quest-markup/raw/master/${outputDir}/${userScriptName}
+// @icon          https://avatars2.githubusercontent.com/u/11947488
+// ==/UserScript==
