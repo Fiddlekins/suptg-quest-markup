@@ -2,7 +2,7 @@ import normalisePostData from './normalisePostData.js';
 import './style.pcss';
 
 let data;
-const types = ['qm', 'player', 'discarded'];
+const types = ['qm', 'player', 'vote', 'discarded'];
 
 function getBoard() {
 	const boardTitle = document.querySelector('.boardTitle');

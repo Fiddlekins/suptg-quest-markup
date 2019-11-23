@@ -136,10 +136,10 @@ function normalisePostData(post, options) {
 	return normalisedPost;
 }
 
-__$styleInject(".sqm-hidden{display:none}.sqm-qm{background-color:rgba(255,0,0,.32941)}.sqm-player{background-color:rgba(0,237,255,.18824)}.sqm-discarded{opacity:.5}.sqm-export-button{position:fixed;right:0;top:22px;z-index:100;background:aqua;padding:.2em;font-size:1.5em}.sqm-title-form{position:fixed;top:50vh;left:50vw;-webkit-transform:translate(-50%);transform:translate(-50%);background-color:#7fffd4;padding:1em;border:1px solid #000}.sqm-title-form input{display:block;width:30.5vw}.sqm-title-form button{padding:.25em}", undefined);
+__$styleInject(".sqm-hidden{display:none}.sqm-qm{background-color:rgba(255,0,0,.32941)}.sqm-vote{background-color:rgba(0,7,255,.19)}.sqm-player{background-color:rgba(0,237,255,.18824)}.sqm-discarded{opacity:.5}.sqm-export-button{position:fixed;right:0;top:22px;z-index:100;background:aqua;padding:.2em;font-size:1.5em}.sqm-title-form{position:fixed;top:50vh;left:50vw;-webkit-transform:translate(-50%);transform:translate(-50%);background-color:#7fffd4;padding:1em;border:1px solid #000}.sqm-title-form input{display:block;width:30.5vw}.sqm-title-form button{padding:.25em}", undefined);
 
 var data = void 0;
-var types = ['qm', 'player', 'discarded'];
+var types = ['qm', 'player', 'vote', 'discarded'];
 
 function getBoard() {
 	var boardTitle = document.querySelector('.boardTitle');
