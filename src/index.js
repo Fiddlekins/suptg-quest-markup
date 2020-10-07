@@ -71,7 +71,7 @@ function addExportButton() {
 	document.body.appendChild(button);
 }
 
-function addTitleInput(threadId) {
+function addTitleInput(board, threadId) {
 	const inputForm = document.createElement('div');
 	inputForm.classList.add('sqm-title-form', 'sqm-hidden');
 	inputForm.innerHTML = `<input type="text">
@@ -83,7 +83,7 @@ function addTitleInput(threadId) {
 	inputForm.querySelector('.sqm-button-confirm').addEventListener('click', () => {
 		inputForm.classList.add('sqm-hidden');
 		data[0].sqmChapterTitle = inputForm.querySelector('input').value;
-		downloadText(`sqm-${threadId}-${Date.now()}`, JSON.stringify(data, null, '\t'));
+		downloadText(`sqm-${board}-${threadId}-${Date.now()}`, JSON.stringify(data, null, '\t'));
 	});
 	document.body.appendChild(inputForm);
 }
@@ -98,7 +98,7 @@ function init() {
 	const opTrip = data[0].trip;
 	for (const post of data) {
 		let type;
-		if (post.trip === opTrip) {
+		if (opTrip && post.trip === opTrip) {
 			type = 'qm';
 			post.sqmType = 'qm';
 		} else {
@@ -110,7 +110,7 @@ function init() {
 		postNode.addEventListener('click', onClick);
 	}
 
-	addTitleInput(threadId);
+	addTitleInput(board, threadId);
 	addExportButton();
 }
 

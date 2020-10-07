@@ -103,6 +103,10 @@ function addPostMedia(post, normalisedPost, _ref) {
 	if (file) {
 		try {
 			var img = file.querySelector('img');
+			if (img.getAttribute('alt') === 'File deleted.') {
+				normalisedPost.fileDeleted = true;
+				return;
+			}
 			var fileText = file.querySelector('.fileText');
 			var fileThumb = file.querySelector('.fileThumb');
 			var nameLink = fileText.querySelector('a');
@@ -252,7 +256,7 @@ function addExportButton() {
 	document.body.appendChild(button);
 }
 
-function addTitleInput(threadId) {
+function addTitleInput(board, threadId) {
 	var inputForm = document.createElement('div');
 	inputForm.classList.add('sqm-title-form', 'sqm-hidden');
 	inputForm.innerHTML = '<input type="text">\n<button class="sqm-button-cancel">Cancel</button>\n<button class="sqm-button-confirm">Confirm</button>';
@@ -262,7 +266,7 @@ function addTitleInput(threadId) {
 	inputForm.querySelector('.sqm-button-confirm').addEventListener('click', function () {
 		inputForm.classList.add('sqm-hidden');
 		data[0].sqmChapterTitle = inputForm.querySelector('input').value;
-		downloadText('sqm-' + threadId + '-' + Date.now(), JSON.stringify(data, null, '\t'));
+		downloadText('sqm-' + board + '-' + threadId + '-' + Date.now(), JSON.stringify(data, null, '\t'));
 	});
 	document.body.appendChild(inputForm);
 }
@@ -286,7 +290,7 @@ function init() {
 			var post = _step3.value;
 
 			var type = void 0;
-			if (post.trip === opTrip) {
+			if (opTrip && post.trip === opTrip) {
 				type = 'qm';
 				post.sqmType = 'qm';
 			} else {
@@ -312,7 +316,7 @@ function init() {
 		}
 	}
 
-	addTitleInput(threadId);
+	addTitleInput(board, threadId);
 	addExportButton();
 }
 

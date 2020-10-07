@@ -56,6 +56,10 @@ function addPostMedia(post, normalisedPost, { board, threadId }) {
 	if (file) {
 		try {
 			const img = file.querySelector('img');
+			if (img.getAttribute('alt') === 'File deleted.') {
+				normalisedPost.fileDeleted = true;
+				return;
+			}
 			const fileText = file.querySelector('.fileText');
 			const fileThumb = file.querySelector('.fileThumb');
 			const nameLink = fileText.querySelector('a');
