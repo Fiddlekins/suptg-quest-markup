@@ -36,7 +36,7 @@
   "dependencies": {
     "eventemitter3": "^2.0.3",
     "jaro-winkler": "^0.2.8",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "moment-timezone": "^0.5.27"
   }
 }
